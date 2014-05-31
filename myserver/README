@@ -1,0 +1,12 @@
+Nota: preferabil este sa se lucreze in "/srv/work" (cd /srv/work)
+
+
+1. git clone https://github.com/RoPython/ropython-examples.git
+
+2. cd ropython-examples/myserver
+
+2. sudo setup.py install
+
+3. python
+>>> import myserver
+>>> myserver.start_server()
