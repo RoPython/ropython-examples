@@ -21,7 +21,3 @@ class Track(models.Model):
 
     class Meta:
        db_table = 'tracks'
-
-class Vote(models.Model):
-    user = models.ForeignKey(User, related_name="user_vote")
-    track = models.ForeignKey(Track, related_name="track")

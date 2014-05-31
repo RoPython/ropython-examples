@@ -3,7 +3,7 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 admin.autodiscover()
 
-from jukebox.tracks.views import ArtistList, Playlist
+from jukebox.tracks.views import ArtistList, Playlist, Song
 from jukebox.auth.views import AuthCreate, AuthTokenList
 
 urlpatterns = patterns('',
@@ -16,4 +16,5 @@ urlpatterns = patterns('',
     url(r'^artists/$', ArtistList.as_view(), name='artists'),
     url(r'^auth/$', AuthCreate.as_view(), name='auth'),
     url(r'^tokens/$', AuthTokenList.as_view(), name='tokens'),
+    url(r'^playlist/(?P<pk>\d+)/$', Song.as_view()),    
 )
