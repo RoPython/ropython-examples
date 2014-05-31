@@ -13,10 +13,11 @@ class Artist(models.Model):
 class Track(models.Model):
     track_name = models.CharField(max_length=256)
     artist = models.ForeignKey(Artist)
-    vote_count = models.IntegerField(default=0)    
+    tid = models.IntegerField()
 
     def __repr__(self):
-        return "<Track {} by {}>".format(self.track_name, self.artist.name)
+        return "<Track {} by {}; id {}>".format(
+            self.track_name, self.artist.name, self.tid)
 
     class Meta:
        db_table = 'tracks'
