@@ -1,3 +1,5 @@
+#! /usr/bin/env python
+
 """ Parse the CNN rss feed and open the most recent
 10 links in the browser.
 """
@@ -15,5 +17,5 @@ def get_urls(max_urls=None):
             for item in soup.find_all('item')][:max_urls]
 
 executor = ThreadPoolExecutor(max_workers=3)
-for url in get_urls(max_urls=10):
+for url in get_urls(max_urls=3):
     executor.submit(webbrowser.open, url)
